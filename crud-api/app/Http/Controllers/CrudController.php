@@ -22,6 +22,7 @@ class CrudController extends Controller
             "message" => "Event List",
             "data" => $event
             ]);
+       //return $event;
     }
 
     /**
@@ -89,7 +90,7 @@ class CrudController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        //sad
     }
 
     /**
