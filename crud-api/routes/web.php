@@ -17,10 +17,3 @@ use App\Http\Controllers\CrudController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-<<<<<<< Updated upstream
-
-
-
-=======
->>>>>>> Stashed changes
