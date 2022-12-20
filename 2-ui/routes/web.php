@@ -17,7 +17,9 @@ use App\Http\Controllers\EventController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('events', EventController::class);
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('events', EventController::class);
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

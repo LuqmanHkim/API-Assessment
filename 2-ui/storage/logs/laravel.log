@@ -465,3 +465,25 @@
 #63 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\GitHub Proje...')
 #64 {main}
 "} 
+[2022-12-20 03:24:28] local.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1429)
+[stacktrace]
+#0 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\GeneratorCommand.php(388): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\GeneratorCommand.php(202): Illuminate\\Console\\GeneratorCommand->rootNamespace()
+#2 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\GeneratorCommand.php(157): Illuminate\\Console\\GeneratorCommand->qualifyClass('CreatedEventMai...')
+#3 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\MailMakeCommand.php(55): Illuminate\\Console\\GeneratorCommand->handle()
+#4 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\MailMakeCommand->handle()
+#5 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#7 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#8 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(651): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#9 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(182): Illuminate\\Container\\Container->call(Array)
+#10 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\symfony\\console\\Command\\Command.php(312): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(152): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\symfony\\console\\Application.php(1020): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\symfony\\console\\Application.php(312): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\MailMakeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 C:\\GitHub Project\\API-Test\\2-ui\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 C:\\GitHub Project\\API-Test\\2-ui\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 {main}
+"} 
