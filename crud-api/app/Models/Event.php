@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Events\CreatingEvent;
 
 class Event extends Model
 {
@@ -13,5 +14,9 @@ class Event extends Model
 	protected $table = 'event';
     // protected $casts = [
     //     'id' => 'string',
+    // ];
+
+    // protected $dispatchesEvents = [
+    //     'created' => CreatingEvent::class,
     // ];
 }

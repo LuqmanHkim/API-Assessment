@@ -2,13 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\CreatingEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\CreatingEventMail;
 
-class SendCreatingNotification
+class SendVisitor
 {
     /**
      * Create the event listener.
@@ -23,11 +20,12 @@ class SendCreatingNotification
     /**
      * Handle the event.
      *
-     * @param  \App\Events\CreatingEvent  $event
+     * @param  object  $event
      * @return void
      */
-    public function handle(CreatingEvent $event)
+    public function handle($event)
     {
-        Mail::to($event->email)->send(new CreatingEventMail());
+        //dd($event);
+        dump('The email address ' . $event->email . ' has been signed up for the newsletter.');
     }
 }

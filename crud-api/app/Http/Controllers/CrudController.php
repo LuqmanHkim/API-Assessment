@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Event;
-
+use Illuminate\Support\Facades\Auth;
+use App\Events\CreatingEvent;
+use Illuminate\Support\Facades\Log;
 
 class CrudController extends Controller
 {
@@ -43,7 +45,7 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-
+        Log::Info($request->email);
         $validator = $request->validate([
             'name' => 'required',
             'startAt' => 'required',
@@ -61,6 +63,9 @@ class CrudController extends Controller
         $event->startAt = $request->startAt;
         $event->endAt = $request->endAt;
         $event->save();
+        // dd($event);
+
+        event(new CreatingEvent($request->email));
 
         return response()->json([
             "success" => true,
@@ -102,7 +107,7 @@ class CrudController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //dd($event);
+        Log::Info($request->email);
         $validator = $request->validate([
             'name' => 'required',
             'startAt' => 'required',
@@ -110,11 +115,12 @@ class CrudController extends Controller
         ]);
         //dd($event);
 
-        $check = $event-> name == $request->name;
+        $check = $event->name == $request->name;
         if(!$check)
         {
           $event  = new Event();
           $event->id = (string) Str::uuid();
+          event(new CreatingEvent($request->email));
         }
 
         $event->name = $request->name;

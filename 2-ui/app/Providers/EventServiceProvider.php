@@ -23,6 +23,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\CreatingEvent' => [
             'App\Listeners\SendCreatingNotification',
+            'App\Listeners\SendFunny',
+            'App\Listeners\SendClient',
+            'App\Listeners\SendVisitor'
         ],
     ];
 
