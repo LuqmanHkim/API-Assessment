@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Events\UserRegisterEvent;
+use App\Events\CreatingEvent;
 
 class User extends Authenticatable
 {
@@ -45,6 +46,7 @@ class User extends Authenticatable
 
     protected $dispatchesEvents = [
         'created' => UserRegisterEvent::class,
+        // 'creating' => CreatingEvent::class
     ];
 
 }

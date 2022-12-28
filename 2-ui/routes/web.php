@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Mail\CreatingEventMail;
+use App\Events\CreatingEvent;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +26,8 @@ Route::group(['middleware' => ['auth']], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/funny', function() {
+    Mail::to('yeyoohjer99@gmail.com')->send(new CreatingEventMail());
+    return '<h1>Email Sent Succesfully!!!</h1>';
+});

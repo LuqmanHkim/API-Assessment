@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
+use App\Events\CreatingEvent;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -23,6 +25,7 @@ class EventController extends Controller
        // $remainingBytes = $body->getContents();
         //$getData = json_decode($remainingBytes);
         //dd($events);
+
 
         return view('index', compact('events'));
 
@@ -46,15 +49,19 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        $userEmail = Auth::user()->email;
         $baseUrl = 'http://127.0.0.1:7802/api/v1/events/';
         $client = new Client();
         $response = $client->request('POST', $baseUrl, [
             'json' => [
                 'name' => $request->name,
                 'startAt' => $request->startAt,
-                'endAt' => $request->endAt
+                'endAt' => $request->endAt,
+                'email' => $userEmail
                 ]
             ]);
+
+        // event(new CreatingEvent($userEmail));
         //dd($response);
         Log::Info('Events.Store');
 
@@ -115,13 +122,15 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $userEmail = Auth::user()->email;
         $baseUrl = 'http://127.0.0.1:7802/api/v1/events/'.$id;
         $client = new Client();
         $response = $client->request('PUT', $baseUrl, [
             'json' => [
                 'name' => $request->name,
                 'startAt' => $request->startAt,
-                'endAt' => $request->endAt
+                'endAt' => $request->endAt,
+                'email' => $userEmail
                 ]
             ]);
         //dd($response);

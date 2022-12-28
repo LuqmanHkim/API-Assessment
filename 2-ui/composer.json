@@ -13,7 +13,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.1",
 
-        "laravel/tinker": "^2.7",
+        "laravel/tinker": "^2.7"
 
     },
     "require-dev": {

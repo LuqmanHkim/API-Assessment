@@ -14,17 +14,17 @@ class CreatingEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $events;
+    public $email;
 
-    //public $email
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($events)
+    public function __construct($email)
     {
-        $this->email = $events;
+        // dd($events);
+        $this->email = $email;
     }
 
     /**
